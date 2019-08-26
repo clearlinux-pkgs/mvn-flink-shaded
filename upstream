@@ -9,3 +9,5 @@ a4ec46369310fbbeba7661127da17acf67fd19c3/flink-shaded-guava-18.0-6.0.jar
 bada28bcedef201fc7acaa5c0b4d8b1f5b17a15a/flink-shaded-jackson-parent-2.7.9-6.0.pom
 d80f453a498be11dd9a29ea4198ab3eee6a7e15b/flink-shaded-asm-6-6.2.1-6.0.pom
 5e4b83eb2a0952dca3822030077ab70360f82f53/flink-shaded-asm-6-6.2.1-6.0.jar
+bc800a0de22b752e1fdcc1787ffb011eb0407ffd/flink-shaded-netty-4.1.32.Final-6.0.pom
+140faed20eea6351c8f36c060b2a3890a1fc5f24/flink-shaded-netty-4.1.32.Final-6.0.jar
