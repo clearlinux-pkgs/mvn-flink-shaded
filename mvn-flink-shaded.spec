@@ -4,7 +4,7 @@
 #
 Name     : mvn-flink-shaded
 Version  : 5.0
-Release  : 5
+Release  : 6
 URL      : https://github.com/apache/flink-shaded/archive/5.0.tar.gz
 Source0  : https://github.com/apache/flink-shaded/archive/5.0.tar.gz
 Source1  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-asm-6/6.2.1-6.0/flink-shaded-asm-6-6.2.1-6.0.jar
@@ -13,17 +13,21 @@ Source3  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-asm/5.0.
 Source4  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-asm/5.0.4-6.0/flink-shaded-asm-5.0.4-6.0.pom
 Source5  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-guava/18.0-6.0/flink-shaded-guava-18.0-6.0.jar
 Source6  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-guava/18.0-6.0/flink-shaded-guava-18.0-6.0.pom
-Source7  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson-parent/2.7.9-6.0/flink-shaded-jackson-parent-2.7.9-6.0.pom
-Source8  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.jar
-Source9  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.pom
-Source10  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.jar
-Source11  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.pom
-Source12  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded/6.0/flink-shaded-6.0.pom
+Source7  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.jar
+Source8  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.pom
+Source9  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson-parent/2.7.9-6.0/flink-shaded-jackson-parent-2.7.9-6.0.pom
+Source10  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.jar
+Source11  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.pom
+Source12  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.jar
+Source13  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.pom
+Source14  : https://repo1.maven.org/maven2/org/apache/flink/flink-shaded/6.0/flink-shaded-6.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause
 Requires: mvn-flink-shaded-data = %{version}-%{release}
 Requires: mvn-flink-shaded-license = %{version}-%{release}
+BuildRequires : apache-maven
+BuildRequires : buildreq-mvn
 
 %description
 <!--
@@ -80,23 +84,29 @@ cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-guava/18.0-6.0
 cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-guava/18.0-6.0/flink-shaded-guava-18.0-6.0.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-parent/2.7.9-6.0
-cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-parent/2.7.9-6.0/flink-shaded-jackson-parent-2.7.9-6.0.pom
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-parent/2.7.9-6.0/flink-shaded-jackson-parent-2.7.9-6.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0
-cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.jar
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0
-cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.pom
+cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0
-cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.jar
+cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0
-cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.pom
+cp %{SOURCE13} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-netty/4.1.32.Final-6.0/flink-shaded-netty-4.1.32.Final-6.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded/6.0
-cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded/6.0/flink-shaded-6.0.pom
+cp %{SOURCE14} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink-shaded/6.0/flink-shaded-6.0.pom
 
 
 %files
@@ -110,6 +120,8 @@ cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/apache/flink/flink
 /usr/share/java/.m2/repository/org/apache/flink/flink-shaded-asm/5.0.4-6.0/flink-shaded-asm-5.0.4-6.0.pom
 /usr/share/java/.m2/repository/org/apache/flink/flink-shaded-guava/18.0-6.0/flink-shaded-guava-18.0-6.0.jar
 /usr/share/java/.m2/repository/org/apache/flink/flink-shaded-guava/18.0-6.0/flink-shaded-guava-18.0-6.0.pom
+/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.jar
+/usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-module-jsonSchema/2.7.9-6.0/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.pom
 /usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson-parent/2.7.9-6.0/flink-shaded-jackson-parent-2.7.9-6.0.pom
 /usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.jar
 /usr/share/java/.m2/repository/org/apache/flink/flink-shaded-jackson/2.7.9-6.0/flink-shaded-jackson-2.7.9-6.0.pom

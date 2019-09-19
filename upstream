@@ -11,3 +11,5 @@ d80f453a498be11dd9a29ea4198ab3eee6a7e15b/flink-shaded-asm-6-6.2.1-6.0.pom
 5e4b83eb2a0952dca3822030077ab70360f82f53/flink-shaded-asm-6-6.2.1-6.0.jar
 bc800a0de22b752e1fdcc1787ffb011eb0407ffd/flink-shaded-netty-4.1.32.Final-6.0.pom
 140faed20eea6351c8f36c060b2a3890a1fc5f24/flink-shaded-netty-4.1.32.Final-6.0.jar
+31180f1b5f61b29942efe797fc11bb6cf0185868/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.jar
+6719f78d0490420657797ee5485c502f7fe4b6b7/flink-shaded-jackson-module-jsonSchema-2.7.9-6.0.pom
